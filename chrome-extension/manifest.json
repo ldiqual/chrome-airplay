@@ -1,0 +1,25 @@
+{
+    "name": "Chrome Airplay",
+    "version": "0.1",
+    "description": "Airplay on Chrome",
+    "manifest_version": 2,
+    "permissions": [
+        "tabs",
+        "declarativeContent",
+        "http://*:7000/",
+        "https://www.youtube.com/"
+    ],
+    "background": {
+        "scripts": ["dist/background.js"],
+        "persistent": true
+    },
+    "page_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/airplay16.png",
+            "32": "images/airplay32.png",
+            "48": "images/airplay64.png",
+            "128": "images/airplay128.png"
+        }
+    }
+}
