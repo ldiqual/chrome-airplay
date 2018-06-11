@@ -1,6 +1,6 @@
 {
     "name": "Chrome Airplay",
-    "version": "0.1",
+    "version": "0.1.0",
     "description": "Airplay on Chrome",
     "manifest_version": 2,
     "permissions": [
