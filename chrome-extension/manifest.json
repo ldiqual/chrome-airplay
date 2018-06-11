@@ -1,7 +1,7 @@
 {
     "name": "Chrome Airplay",
     "version": "0.1.0",
-    "description": "Airplay on Chrome",
+    "description": "Play videos from Chrome to your Apple TV",
     "manifest_version": 2,
     "icons": {
         "16": "images/airplay16.png",
