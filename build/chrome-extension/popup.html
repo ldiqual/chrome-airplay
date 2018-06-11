@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" /> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <style>
+    
+      body {
+        width: 250px;
+        padding: 10px 0 10px 0;
+      }
+      
+      *:focus, *:active:focus {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+    
+      #airplay-pair-form,
+      #airplay-format-selector,
+      #airplay-pin-form,
+      #airplay-unpair,
+      #airplay-player {
+        display: none;
+      }
+      
+      #airplay-player {
+        margin-top: 20px;
+      }
+      
+      #airplay-player .form-group {
+        align-items: center;
+      }
+      
+      #airplay-player-controls {
+        padding-right: 0;
+      }
+      
+      #airplay-player-controls button {
+        border: 0
+      }
+      
+      #airplay-player-slider-col {
+        padding-left: 0;
+      }
+      
+      .spinner {
+        display: inline-block;
+      }
+      
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+      
+      <!-- Pair -->
+      <form id="airplay-pair-form">
+        
+        <h4>Enter the IP address of your Apple TV</h4>
+        <p>
+          Go to <b>Settings</b> → <b>Network</b> and copy the <b>IP Address</b> value here.
+        </p>
+        
+        <div id="airplay-pair-group" class="form-group">
+          <input id="airplay-server-ip-input" type="text" class="form-control" placeholder="IP Address" pattern="^([0-9]{1,3}\.){3}[0-9]{1,3}$" required>
+          <div class="invalid-feedback">Invalid IP address, please try again</div>
+        </div>
+        
+        <button id="airplay-pair-submit" type="submit" class="btn btn-primary">
+          <span class="fas fa-sync-alt fa-spin spinner"></span>
+          Start Pairing
+        </button>
+      </form>
+      
+      <!-- Pin -->
+      <form id="airplay-pin-form" novalidate>
+        <div class="form-group" id="airplay-pin-group">
+          <label for="airplay-pin-input">Apple TV PIN</label>
+          <input type="number" class="form-control" id="airplay-pin-input" placeholder="Enter PIN" min="0000" max="9999" required>
+          <div class="invalid-feedback">Invalid PIN, please try again</div>
+          <small class="form-text text-muted">Enter the PIN showing on your Apple TV</small>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <span class="fas fa-sync-alt fa-spin spinner"></span>
+          Pair
+        </button>
+      </form>
+      
+      <!-- Format selector -->
+      <div id="airplay-format-selector">
+        
+        <h4>Select a video format</h4>
+        
+        <span class="fas fa-spinner fa-spin spinner"></span>
+      
+        <div id="airplay-format-selector-list" class="list-group">
+          
+        </div>
+      </div>
+      
+      <!-- Format selector -->
+      <div id="airplay-player">
+        <div class="form-group row">
+          <div id="airplay-player-controls" class="col-4">
+            <button id="airplay-player-stop" class="fas fa-stop"></button>
+            <button id="airplay-player-playpause" class="fas fa-play"></button>
+          </div>
+          <div id="airplay-player-slider-col" class="col-8">
+            <input id="airplay-player-slider" type="range" min="0" max="1" class="form-control-range" id="formControlRange">
+          </div>
+        </div>
+      </div>
+      
+      <a href="#" id="airplay-unpair">Unpair</a>
+      
+    </div>
+    
+    <script src="dist/popup.js"></script>
+  </body>
+</html>

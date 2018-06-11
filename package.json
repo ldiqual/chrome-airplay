@@ -1,8 +1,8 @@
 {
   "scripts": {
     "lint": "eslint .",
-    "build-dev": "webpack --mode=development",
-    "watch-dev": "webpack --watch --mode=development"
+    "watch:js:dev": "webpack --watch --mode=development",
+    "build:chrome-extension:prod": "node bin/build.js"
   },
   "dependencies": {
     "bluebird": "^3.5.1",
@@ -27,6 +27,7 @@
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-plugin-dependencies": "^2.4.0",
+    "fs-extra": "^6.0.1",
     "style-loader": "^0.21.0",
     "webpack": "^4.10.2",
     "webpack-cli": "^3.0.1"
