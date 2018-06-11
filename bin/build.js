@@ -14,7 +14,7 @@ async function run() {
     
     // Create `build/chrome-extension/` directory
     if (!await fs.pathExists(outputDir)) {
-        await fs.mkdir(outputDir)
+        await fs.mkdirp(outputDir)
     }
     
     const sourceFilenames = [
