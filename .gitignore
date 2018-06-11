@@ -1,4 +1,5 @@
 chrome-extension/dist
+build/
 
 # Logs
 logs
