@@ -193,8 +193,10 @@ chrome.runtime.onMessage.addListener((req, sender, sendResponse) => {
     
     Promise.try(async() => {
         const response = await handler(req)
+        console.log(`Response for ${action}`, response)
         sendResponse(response)
     }).catch(err => {
+        console.error(`Error for ${action}`, err)
         sendResponse({ error: Errio.toObject(err) })
     })
     
