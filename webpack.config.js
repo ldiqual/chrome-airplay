@@ -28,8 +28,13 @@ module.exports = {
         minimizer: [
             new UglifyJsPlugin({
                 uglifyOptions: {
+                    mangle: {
+                        // To avoid mangling error in `fast-srp-hap`
+                        keep_fnames: true // eslint-disable-line camelcase
+                    },
                     compress: {
-                        unused: false // To avoid "assignment to const" error due to bad compression
+                        // To avoid "assignment to const" error due to bad compression
+                        unused: false
                     }
                 }
             })

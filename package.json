@@ -2,6 +2,7 @@
   "scripts": {
     "lint": "eslint .",
     "watch:js:dev": "webpack --watch --mode=development",
+    "watch:js:prod": "webpack --watch --mode=production",
     "build:chrome-extension:prod": "node bin/build.js"
   },
   "dependencies": {
