@@ -3,7 +3,7 @@ Chrome Airplay
 
 Play videos from Chrome to your Apple TV.
 
-![](docs/screenshot.jpg)
+![](docs/images/screenshot.jpg)
 
 Install
 -------
@@ -65,3 +65,4 @@ Credits
  - Airplay video endpoints: <http://nto.github.io/AirPlay.html#video>
  - atv-client: <https://github.com/googoid/atv-client>
  - Airplay icon: <https://www.flaticon.com/free-icon/airplay_565221>
+ - Documentation template: <https://html5up.net>
