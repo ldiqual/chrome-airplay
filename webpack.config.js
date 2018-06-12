@@ -3,6 +3,7 @@
 'use strict'
 
 const path = require('path')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
     entry: {
@@ -22,5 +23,14 @@ module.exports = {
             test: /\.css$/,
             use: [ 'style-loader', 'css-loader' ]
         }]
+    },
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                uglifyOptions: {
+                    toplevel: false
+                }
+            })
+        ]
     }
 }
