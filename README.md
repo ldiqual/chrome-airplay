@@ -8,7 +8,7 @@ Play videos from Chrome to your Apple TV.
 Install
 -------
 
-Install from the Chrome Web Store: <https://chrome.google.com/webstore/detail/hbmlfaoeelcpjkhchbnjjefcibeadedc/publish-accepted?authuser=0&hl=en-US>
+Install from the Chrome Web Store: <https://chrome.google.com/webstore/detail/chrome-airplay/hbmlfaoeelcpjkhchbnjjefcibeadedc>
 
 Supported websites
 ------------------
