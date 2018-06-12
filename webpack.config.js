@@ -28,7 +28,9 @@ module.exports = {
         minimizer: [
             new UglifyJsPlugin({
                 uglifyOptions: {
-                    toplevel: false
+                    compress: {
+                        unused: false // To avoid "assignment to const" error due to bad compression
+                    }
                 }
             })
         ]
