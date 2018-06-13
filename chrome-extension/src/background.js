@@ -95,6 +95,26 @@ function removeIpAddress() {
     window.localStorage.removeItem('ipAddress')
 }
 
+let keepAliveInterval = null
+function startKeepAliveInterval() {
+    if (keepAliveInterval) {
+        return
+    }
+    keepAliveInterval = window.setInterval(() => {
+        const ipAddress = getSavedIpAddress()
+        if (!ipAddress) {
+            return
+        }
+        testConnection({ ipAddress })
+    }, 10000)
+}
+
+function stopKeepAliveInterval() {
+    if (keepAliveInterval) {
+        window.clearInterval(keepAliveInterval)
+    }
+}
+
 let airplay = null
 const savedIpAddress = getSavedIpAddress()
 if (savedIpAddress !== null) {
@@ -136,13 +156,13 @@ const handlers = {
     'verify': async(req) => {
         const timeoutError = new Error("Couldn't connect to this Apple TV, please try a different address")
         const timeout = Promise.delay(1000).then(() => Promise.reject(timeoutError))
-        return Promise.race([ airplay.verify(), timeout ]).then(() => {
-            return {}
-        })
+        await Promise.race([ airplay.verify(), timeout ])
+        return {}
     },
     'playback.play': async(req) => {
         const { videoUrl } = req
         await airplay.play({ videoUrl })
+        startKeepAliveInterval()
         return {}
     },
     'playback.info': async(req) => {
@@ -164,10 +184,12 @@ const handlers = {
     },
     'playback.stop': async(req) => {
         await airplay.stop()
+        stopKeepAliveInterval()
         return {}
     },
     'unpair': async(req) => {
         await airplay.stop()
+        stopKeepAliveInterval()
         removeIpAddress()
         removeCredentials()
         airplay = null
