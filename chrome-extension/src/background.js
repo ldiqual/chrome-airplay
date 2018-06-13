@@ -105,7 +105,10 @@ function startKeepAliveInterval() {
         if (!ipAddress) {
             return
         }
-        testConnection({ ipAddress })
+        console.log('Get server info to maintain connection')
+        testConnection({ ipAddress }).catch(err => {
+            console.error("Couldn't get server info", err)
+        })
     }, 10000)
 }
 
