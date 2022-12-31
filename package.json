@@ -28,14 +28,14 @@
     "@scoop/eslint-config-scoop": "^5.0.0",
     "acorn": "^7.0.0",
     "archiver": "^2.1.1",
-    "css-loader": "^3.2.0",
+    "css-loader": "^6.7.3",
     "eslint": "^5.16.0",
     "eslint-plugin-dependencies": "^2.4.0",
     "eslint-plugin-implicit-dependencies": "^1.0.4",
     "fs-extra": "^6.0.1",
-    "style-loader": "^0.21.0",
+    "style-loader": "^3.3.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.12.0",
-    "webpack-cli": "^3.0.3"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   }
 }
